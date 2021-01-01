@@ -33,6 +33,7 @@ or in development mode:
 ```npm run build-dev```
 ### Running the server
 Run the following command to run the server:
+sever will be running on port 8081
 
 ```npm start```
 ### Running the tests
