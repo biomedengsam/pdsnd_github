@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NLP</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img id="logo" class="" alt="logo">
+                <span>NLP</span>
+            </div>
+        </header>
+        <main>
+            <h1 class="mt-3">Natural language processing</h1>
+            <section>
+                <form class="form-group" onsubmit="return handleSubmit(event)">
+                    <label for="text">Enter text to analyze:</label>
+                    <input id="text" class="form-control " type="text" name="input" value=""  placeholder="Enter text to analyze">
+                    <input id="submit" type="submit" class="btn btn-light mt-3" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                </form>
+            <section>
+            <section id="output">
+                <h2>Form Results:</h2><hr>
+                <div class="result">
+                    <div id="results">
+                        <p class="h5">Agreement: <span id="agreement"></span></p>
+                        <p class="h5">Score_tag: <span id="score_tag"></span></p>
+                        <p class="h5">Subjectivity: <span id="subjectivity"></span></p>
+                        <p class="h5">Confidence: <span id="confidence"></span></p>
+                        <p class="h5">Irony: <span id="irony"></span></p>
+                    </div>
+                    <img id="board" class="pt-3" alt="board with faces smile,sad,neutral">
+                </div>
+            </section>
+            <section id="result-description"><hr>
+                <!-- This section data is from https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/response -->
+                <div>
+                    <h3>Results Description:</h3><br>
+                    <dl class="row">
+                    <dt class="col-sm-3">Agreement</dt>
+                    <dd class="col-sm-9">This field marks the agreement between the sentiments detected in the text, the sentence
+                        or the segment it refers to. It has two possible values:<br>
+                        <strong> AGREEMENT:</strong>the different elements have the same polarity.<br>
+                        <strong> DISAGREEMENT:</strong>there is disagreement between the different elements' polarity.<br>
+                    </dd>
+                    <dt class="col-sm-3">Score_tag</dt>
+                    <dd class="col-sm-9">
+                        <p>This tag indicates the polarity found (or not found) in the element it refers to.
+                        It may apply to several elements: polarity_term, sentimented_concept, sentimented_entity,
+                        segment, sentence or the global polarity of the text.
+                        The possible values are the following:
+                            <ul>
+                                <li><strong>P+:</strong>  strong positive</li>
+                                <li> <strong>P:</strong> positive</li>
+                                <li><strong>NEU:</strong> neutral</li>
+                                <li><strong>N:</strong> negative</li>
+                                <li> <strong>N+:</strong> strong negative</li>
+                                <li><strong>NONE:</strong> without sentiment</li>
+                            </ul>
+                        </p>
+                    </dd>
+                    <dt class="col-sm-3">Subjectivity</dt>
+                    <dd class="col-sm-9">This field marks the subjectivity of the text. It has two possible values:
+                        <strong>OBJECTIVE:</strong>the text does not have any subjectivity marks.<br>
+                        <strong>SUBJECTIVE:</strong>the text has subjective marks.
+                    </dd>
+                    <dt class="col-sm-3 text-truncate">Confidence</dt>
+                    <dd class="col-sm-9">This field represents the confidence associated with the sentiment analysis performed on the text.
+                        Its value is an integer number in the 0-100 range.
+                    </dd>
+                    <dt class="col-sm-3 text-truncate">Irony</dt>
+                    <dd class="col-sm-9">This field indicates the irony of the text. It has two possible values:<br>
+                        <strong>NONIRONIC: </strong>the text does not have ironic marks<br>
+                        <strong>IRONIC:</strong> the text has ironic marks
+                    </dd>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Copyright © NLP. All Rights Reserved</p>
+        </footer>
+        <script src="../../../dist/main.js"></script>
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
+</html>
