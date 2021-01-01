@@ -12,6 +12,7 @@ With the use of an external api called **MeaningCloud API** to do the language p
 - Webpack Loaders and Plugins
 - Service workers
 - MeaningCloud API
+- jest for testing
 
 ## Project Setup
 Follow the instructions below to setup the project locally.
