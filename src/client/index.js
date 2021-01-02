@@ -10,7 +10,6 @@ import boardP from './images/boardP.jpg';
 import boardN from './images/boardN.jpg';
 import boardNeg from './images/boardNeg.jpg';
 import logo from './images/logo.png';
-import 'bootstrap';
 let logoImg = document.getElementById('logo');
 logoImg.src = logo;
 console.log("CHANGE!!");
