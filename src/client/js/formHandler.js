@@ -33,7 +33,7 @@ const updateUi = (data) => {
 }
 
 // Form handel submit function
-function handleSubmit(event) {
+const handleSubmit = (event) => {
     event.preventDefault()
     // check what text was put into the form field
     let formText = document.getElementById('text').value;
